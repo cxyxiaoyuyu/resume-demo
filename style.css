@@ -1,6 +1,11 @@
+* {
+    margin: 0;    
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    background: black;
-    color: white;
+    background: #efefef;
+    color: black;
     margin: 0;
 }
 a {
@@ -14,13 +19,16 @@ a {
 }
 .topNavBar {
     padding: 20px 16px;
+    position: fixed;
+    width: 100%;
 }
 .topNavBar .logo {
     float: left;
     font-size: 24px;
-    font-family: cursive; 
+    font-family: 'Arial Black'; 
     font-weight: bold;
     padding-top: 6px;
+    color: #b7b7b7;
 }
 .topNavBar>.logo>.rs {
     color: #e6686a;
@@ -31,6 +39,7 @@ a {
 }
 .topNavBar>nav {
     float: right;
+    margin-right: 32px;
 }
 .topNavBar>nav>ul>li {
     list-style: none;
@@ -39,6 +48,7 @@ a {
     margin-right: 17px;
     margin-left: 17px;
     font-weight: bold;
+    color: #b7b7b7;
 }
 .topNavBar>nav>ul>li>a {
     padding-top: 5px;
@@ -49,6 +59,69 @@ a {
 .topNavBar>nav>ul>li>a:hover {
     border-bottom: 3px solid #e6686a; 
     border-top: 3px solid transparent; 
+}
+.banner {
+    background: url('./img/rs-cover.jpg');
+    height: 515px;
+    background-position: center center; 
+    background-size: cover;
+}
+.banner .mask {
+    height: 100%;
+    background: rgba(0,0,0,.8);
+}
+main {
+    margin-top: -340px;
+}
+.userCard {
+    max-width: 940px;
+    margin: 0 auto; 
+    background: #fff;
+    padding: 50px;
+}
+.userCard .userInfo .picture{
+    float: left;
+}
+.userCard .userInfo .text {
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+.userCard .text .welcome {
+    background: #e6686a;
+    color: white;
+    padding: 4px 16px;
+    margin-bottom: 32px;
+    display: inline-block;
+    position: relative;
+}
+.userCard .text .welcome .triangle {
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
+    position: absolute;
+    left: 4px;
+    top: 100%;
+}
+.text hr {
+    margin: 20px 0;
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
+.userCard .text dl dt {
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    padding: 5px 0;
+}
+.userCard .text dl dd {
+    float: left;
+    width: 70%;
+    color: #9da0a7;
+    padding: 5px 0;
 }
 
 
