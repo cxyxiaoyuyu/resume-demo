@@ -8,6 +8,9 @@ body {
     color: black;
     margin: 0;
 }
+h1 {
+    font-weight: normal;
+}
 a {
     color: inherit;
     text-decoration: none;
@@ -118,13 +121,16 @@ main {
     float: left;
     width: 30%;
     font-weight: bold;
+    font-size: 18px;
     padding: 5px 0;
+    font-size: 18px;
 }
 .userCard .text dl dd {
     float: left;
     width: 70%;
     color: #9da0a7;
-    padding: 5px 0;
+    padding: 9px 0 7px 0;
+    font-size: 14px;
 }
 footer {
     background: #e66768;
