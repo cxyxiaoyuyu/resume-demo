@@ -11,6 +11,9 @@ body {
 h1 {
     font-weight: normal;
 }
+li {
+    list-style: none;
+}
 a {
     color: inherit;
     text-decoration: none;
@@ -149,4 +152,146 @@ footer a {
     padding: 14px 18px;
     display: inline-block;
 }
-
+main .downloadwrapper {
+    text-align: center;
+    margin: 32px 0;
+}
+main .downloadwrapper .download{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    border: 1px solid #cdcfd1;
+    padding: 20px 55px;
+    display: inline-block;
+    background: #efefef;
+    color: #3d4451;
+    transition: all 0.2s;
+}
+main .downloadwrapper .download:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2)
+}
+main .slefIntroduction {
+    max-width: 940px;
+    margin: 0 auto; 
+    font-size: 20px;
+    text-align: center;
+    font-family: cursive;
+    line-height: 32px;
+}
+section.skills {
+    max-width: 940px;
+    margin: 60px auto; 
+}
+.skills h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    text-align: center;
+}
+.skills h3 {
+    font-weight: normal;
+    font-size: 16px;
+}
+.skills ol {
+    background: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+    padding: 42px 50px 10px;
+}
+.skills ol li:nth-child(odd){
+    float: left;
+    width: 48%;
+    font-size: 16px;
+    padding: 4px 0;
+}
+.skills ol li:nth-child(even){
+    float: right; 
+    width: 48%;
+    font-size: 16px;
+    padding: 4px 0;
+}
+.skills .processBar {
+    height: 5px;
+    background: #FAE1E1;
+    border-radius: 2px;
+    margin: 4px 0px 40px;
+}
+.skills .processBar .process{
+    height: 100%;
+    width: 78%;
+    background: #E6686A;
+    border-radius: 2px;
+}
+section.portfolio {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+}
+.portfolio h2 {
+    font-size: 34px;
+}
+.portfolio nav {
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 28px;
+}
+.portfolio nav ul {
+    display: inline-block;
+    vertical-align: top;
+}
+.portfolio nav ul li {
+    float: left;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.portfolio nav .bar {
+    height: 5px;
+    background: white;
+    border-radius:2px;
+    margin-top: 5px;
+}
+.portfolio nav .bar-inner {
+    border-radius: 2px;
+    background: #E6686A;
+    height: 100%;
+    transition: all 0.3s;
+}
+.portfolio nav .status1 .bar-inner {
+    margin: 0;
+    width: 26%
+}
+.portfolio nav .status2 .bar-inner {
+    margin-left: 80px;
+    width: 22%; 
+}
+.portfolio nav .status3 .bar-inner {
+    margin-left: 150px;
+    width: 46%
+}
+.portfolio .works {
+    max-width: 930px;
+    height: 597px;
+    position: relative;
+    margin-bottom: 50px;
+    vertical-align: center;
+}
+.portfolio .works .img1,
+.portfolio .works .img2,
+.portfolio .works .img3 {
+    position: absolute;
+    vertical-align: center;
+}
+.portfolio .works .img1 {
+    top: 0;
+    left: 0;
+}
+.portfolio .works .img2 {
+    top: 0;
+    right: 0;
+}
+.portfolio .works .img3 {
+    bottom: 0;
+    right: 0;
+}
+.portfolio .works .img3 img {
+    display: block;
+}

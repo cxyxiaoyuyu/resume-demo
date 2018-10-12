@@ -46,7 +46,7 @@
                     <h1>储晓宇</h1>
                     <p>前端开发工程师</p>
                     <hr>
-                    <dl>
+                    <dl class="clearfix">
                         <dt>年龄</dt>
                         <dd>18</dd>
                         <dt>城市</dt>
@@ -77,8 +77,89 @@
                 </a>
             </footer>
         </div>
-        <a href="./resume.pdf" download>下载PDF简历</a>
-
+        <p class="downloadwrapper">
+            <a href="./resume.pdf" download class="download">下载PDF简历</a>
+        </p>
+        <p class="slefIntroduction">
+        储晓宇，计算机科学与技术专业，一年python全栈开发经验<br>
+        技能：HTML CSS 原生JS Jquery 
+        </p>
     </main>
+    <section class="skills">
+        <h2>技能</h2> 
+        <ol class="clearfix">
+            <li>
+                <h3>HTML5&amp;CSS3</h3>
+                <div class="processBar">
+                    <div class="process" style="width: 20%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>Javascript</h3>
+                <div class="processBar">
+                    <div class="process" style="width: 20%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>jQuery</h3>
+                <div class="processBar">
+                    <div class="process" style="width: 40%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>Vue</h3>
+                <div class="processBar">
+                    <div class="process" style="width:40%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>React.js</h3>
+                <div class="processBar">
+                    <div class="process" style="width:60%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>Node.js</h3>
+                <div class="processBar">
+                    <div class="process" style="width:60%"></div>
+                </div>
+            </li>
+        </ol>
+    </section>
+    <section class="portfolio">
+        <h2>作品集</h2>
+        <nav>
+            <ul class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生JS&amp;CSS</li>
+            </ul>
+             <div id="portfolioStatus" class="bar status1">
+                <div class="bar-inner"></div>
+            </div>
+        </nav>
+        <div class="works">
+            <div class="img1">
+                <img src="./img/1.jpg">
+            </div>
+            <div class="img2">
+                <img src="./img/2.jpg">
+            </div>
+            <div class="img3">
+                <img src="./img/3.jpg">
+            </div>
+        </div>
+    </section>
+    <script>
+        portfolio1.onclick = function(){
+            portfolioStatus.className = "bar status1"
+        }
+        portfolio2.onclick = function(){
+            portfolioStatus.className = "bar status2"
+        }
+        portfolio3.onclick = function(){
+            portfolioStatus.className = "bar status3"
+        }
+    </script>
 </body>
 </html>
