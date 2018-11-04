@@ -14,6 +14,9 @@
 </style>
 </head>
 <body>
+    <div id="site-welcome" class="site-welcome active">
+        <div class="loader"></div>
+    </div>
     <div class="topNavBar clearfix">
         <a class="logo">
             <span class="rs">RS</span><span class="card">card</span>
@@ -160,6 +163,11 @@
         portfolio3.onclick = function(){
             portfolioStatus.className = "bar status3"
         }
+    </script>
+    <script>
+        setTimeout(function(){
+            document.getElementById('site-welcome').remove()
+        },1000)
     </script>
 </body>
 </html>
