@@ -17,26 +17,43 @@
     <div id="site-welcome" class="site-welcome active">
         <div class="loader"></div>
     </div>
-    <div class="topNavBar clearfix">
+    <div id="topNavBar" class="topNavBar clearfix">
         <a class="logo">
             <span class="rs">RS</span><span class="card">card</span>
         </a>
         <nav>
             <ul class="clearfix">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">博客</a></li>
-                <li><a href="#">日历</a></li>
-                <li><a href="#">联系方式</a></li>
-                <li><a href="#">其他</a></li>
+                <li class="menu"><a href="#siteAbout">关于</a></li>
+                <li class="menu"><a href="#siteSkills">技能</a></li>
+                <li class="menu">
+                    <a href="#siteWorks">作品</a>
+                    <ul class="subMenu">
+                        <li><a>键盘导航</a></li>
+                        <li><a>键盘导航</a></li>
+                        <li><a>键盘导航</a></li>
+                        <li><a>键盘导航</a></li>
+                        <li><a>Canvas画布</a></li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="#siteBlog">博客</a>
+                    <ul class="subMenu">
+                        <li><a>博客1</a></li>
+                        <li><a>博客1</a></li>
+                        <li><a>博客1</a></li>
+                        <li><a>博客2</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="#">日历</a></li>
+                <li class="menu"><a href="#">联系方式</a></li>
+                <li class="menu"><a href="#">其他</a></li>
             </ul>
         </nav>
     </div>
     <div class="banner">
         <div class="mask"></div>
     </div>
-    <main>
+    <main id="siteAbout">
         <div class="userCard">
             <div class="userInfo clearfix">
                 <div class="picture">
@@ -88,7 +105,7 @@
         技能：HTML CSS 原生JS Jquery 
         </p>
     </main>
-    <section class="skills">
+    <section id="siteSkills" class="skills">
         <h2>技能</h2> 
         <ol class="clearfix">
             <li>
@@ -129,7 +146,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ul class="clearfix">
@@ -165,9 +182,47 @@
         }
     </script>
     <script>
+        //loading
         setTimeout(function(){
             document.getElementById('site-welcome').remove()
         },1000)
+
+        // scroll animation
+        window.onscroll = function(){
+            if(window.scrollY > 0){
+                document.getElementById('topNavBar').classList.add('sticky')
+            }
+            else {
+                document.getElementById('topNavBar').classList.remove('sticky')
+            }
+        }
+
+        // submenu
+        var liTags = document.querySelectorAll('#topNavBar>nav>ul>li') 
+        for(var i=0;i<liTags.length;i++){
+            liTags[i].onmouseenter = function(ev){
+                ev.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function(ev){
+                ev.currentTarget.classList.remove('active')
+            }
+        }
+        
+        //jump
+        var aTags = document.querySelectorAll('#topNavBar>nav>ul>li>a')
+        for(var i=0;i<aTags.length;i++){
+            aTags[i].onclick = function(ev){
+                ev.preventDefault()
+                var href = ev.currentTarget.hash
+                var rect = document.querySelector(href)
+                var scrolltop = rect.offsetTop - 90
+                window.scrollTo({
+                    top: scrolltop,
+                    behavior: 'smooth'
+                })
+            }
+        }
+
     </script>
 </body>
 </html>
