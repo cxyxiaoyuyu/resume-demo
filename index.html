@@ -53,7 +53,7 @@
     <div class="banner">
         <div class="mask"></div>
     </div>
-    <main id="siteAbout">
+    <main id="siteAbout" data-x class="offset">
         <div class="userCard">
             <div class="userInfo clearfix">
                 <div class="picture">
@@ -105,7 +105,7 @@
         技能：HTML CSS 原生JS Jquery 
         </p>
     </main>
-    <section id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills offset">
         <h2>技能</h2> 
         <ol class="clearfix">
             <li>
@@ -146,7 +146,7 @@
             </li>
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio offset">
         <h2>作品集</h2>
         <nav>
             <ul class="clearfix">
@@ -187,7 +187,13 @@
             document.getElementById('site-welcome').remove()
         },1000)
 
+        dataX = document.querySelectorAll('[data-x]')
+        setTimeout(function(){
+            dataX[0].classList.remove('offset')
+        },1000)
+
         // scroll animation
+        // slide to section and highlight the tag
         window.onscroll = function(){
             if(window.scrollY > 0){
                 document.getElementById('topNavBar').classList.add('sticky')
@@ -195,7 +201,24 @@
             else {
                 document.getElementById('topNavBar').classList.remove('sticky')
             }
+            dataX = document.querySelectorAll('[data-x]')
+            minIndex = 0
+            dataX[0].classList.remove('offset')
+            for(var i=0;i<dataX.length;i++){
+                if(Math.abs(dataX[i].offsetTop-window.scrollY) < Math.abs(dataX[minIndex].offsetTop-window.scrollY)){
+                    minIndex = i
+                    dataX[minIndex].classList.remove('offset')
+                }
+            }
+            var id = dataX[minIndex].id
+            var aTag = document.querySelector('a[href="#'+ id + '"]')
+            var li = aTag.parentNode.parentNode.children
+            for(var i=0;i<li.length;i++){
+                li[i].classList.remove('highlight')
+            }
+            aTag.parentNode.classList.add('highlight')
         }
+
 
         // submenu
         var liTags = document.querySelectorAll('#topNavBar>nav>ul>li') 
@@ -208,7 +231,7 @@
             }
         }
         
-        //jump
+        // smooth jump
         var aTags = document.querySelectorAll('#topNavBar>nav>ul>li>a')
         for(var i=0;i<aTags.length;i++){
             aTags[i].onclick = function(ev){
@@ -222,6 +245,7 @@
                 })
             }
         }
+
 
     </script>
 </body>
