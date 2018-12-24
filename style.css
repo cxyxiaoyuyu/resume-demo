@@ -422,3 +422,19 @@ section.portfolio {
 .portfolio .works .img3 img {
     display: block;
 }
+
+.message {
+    max-width: 940px;
+}
+.message h2{
+    margin-bottom: 32px;
+}
+.message form{
+    margin-bottom: 20px;
+}
+.message ol li{
+    padding: 20px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}

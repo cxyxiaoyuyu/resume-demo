@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./style.css">
     <script src="//at.alicdn.com/t/font_867923_vb18rys2xb9.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script> 
+    <script src="//cdn.jsdelivr.net/npm/leancloud-realtime@4.2.1/dist/realtime.browser.min.js"></script>
+
 <style type="text/css">
 .icon {
     width: 1em; height: 1em;
@@ -169,7 +172,23 @@
                 <img src="./img/3.jpg">
             </div>
         </div>
+
+        <section class="message">
+            <h2>留言</h2>
+            <form id='myForm'>
+                <label>姓名</label>
+                <input type=text name=name>
+                <label>留言</label>
+                <input type=text name=content>
+                <input type=submit>
+            </form>
+            <div class="showMessage">
+                <ol id='messageList'>
+                </ol>
+            </div>
+        </section>
     </section>
+
     <script>
         portfolio1.onclick = function(){
             portfolioStatus.className = "bar status1"
@@ -181,6 +200,7 @@
             portfolioStatus.className = "bar status3"
         }
     </script>
+
     <script>
         //loading
         setTimeout(function(){
@@ -191,6 +211,7 @@
         setTimeout(function(){
             dataX[0].classList.remove('offset')
         },1000)
+
 
         // scroll animation
         // slide to section and highlight the tag
@@ -246,7 +267,8 @@
             }
         }
 
-
     </script>
+
+    <script src="./js/message.js"></script>
 </body>
 </html>
