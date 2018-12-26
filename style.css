@@ -425,6 +425,7 @@ section.portfolio {
 
 .message {
     max-width: 940px;
+    margin-bottom: 100px;
 }
 .message h2{
     margin-bottom: 32px;
